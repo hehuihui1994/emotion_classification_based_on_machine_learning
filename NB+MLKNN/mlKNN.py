@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-
-
 @author: huihui
 """
 
@@ -204,13 +202,12 @@ def predict_test(test_weight,k,train_vec,ph,pe1,pe0,n,train_label):
 #########################################################################################################
 
 
-
-
 #对测试集中的每一条微博，计算与训练集中每一条微博的向量相似度
 #k=21
 def mlKNN(k,a,b,dic_intention_polarity,dic_kafang,dic_smile):
     # fw=open('test_result_temp','w')
     #训练集label
+    #MLKNN的train_label 每一个都是一个向量,这里只选取了主要情绪
     train_label=[]
     f_train_label=open('train_emotion_label.txt','r')
     for line in f_train_label.readlines():
@@ -229,8 +226,6 @@ def mlKNN(k,a,b,dic_intention_polarity,dic_kafang,dic_smile):
     # print len(test_emotion)
     return test_emotion
     
-
-
 
     
 #合并情绪判断与情绪识别结果,也就是预测的结果
